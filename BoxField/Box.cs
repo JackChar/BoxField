@@ -9,36 +9,38 @@ namespace BoxField
 {
     class Box
     {
-        public int x, y, size, speed;
-        public Box(int _x,int _y, int _size, int _speed)
+        public int x, y, size, yspeed, xspeed;
+        public Box(int _x,int _y, int _size, int _yspeed, int _xspeed)
         {
             x = _x;
             y = _y;
             size = _size;
-            speed = _speed;
+            yspeed = _yspeed;
+            xspeed = _xspeed;
         }
         public void Move()
         {
-            y = y + speed;
+            y = y + yspeed;
+            x += xspeed;
         }
 
         public void Move(string direction)
         {
             if (direction == "left")
             {
-                x = x - speed;
+                x = x - yspeed;
             }
             if (direction == "right")
             {
-                x = x + speed;
+                x = x + yspeed;
             }
             if (direction == "up")
             {
-                y = y - speed;
+                y = y - yspeed;
             }
             if (direction == "down")
             {
-                y = y + speed;
+                y = y + yspeed;
             }
 
 
